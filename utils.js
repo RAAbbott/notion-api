@@ -35,11 +35,11 @@ const createInfluencerPayload = (influencer) => {
             },
             'Fee Tier': {
                 select: {
-                    name: influencer.feeTier
+                    name: influencer.feeTier || 'bronze'
                 }
             },
             'Paktola Link': {
-                url: influencer.paktolaLink
+                url: influencer.paktolaLink || 'NULL'
                 // rich_text: [
                 //     {
                 //         type: 'text',
@@ -61,10 +61,10 @@ const createInfluencerPayload = (influencer) => {
                 ]
             },
             'Flat Rate': {
-                number: influencer.flatRate
+                number: influencer.flatRate || 0
             },
             'Hourly Rate': {
-                number: influencer.hourlyRate
+                number: influencer.hourlyRate || 0
             },
             ID: {
                 type: 'rich_text',
@@ -86,7 +86,7 @@ const createInfluencerPayload = (influencer) => {
                 {
                     type: 'text',
                     text: {
-                        content: influencer.tz
+                        content: influencer.tz || 'NULL'
                     }
                 }
             ]
